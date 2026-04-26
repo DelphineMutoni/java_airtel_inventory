@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 @Controller
 public class LoginController {
 
-@GetMapping("/login")
+@GetMapping("/")
 public String showLoginPage() {
     return "login";
 }
@@ -15,7 +15,7 @@ public String showLoginPage() {
 @GetMapping("/logout")
 public String logout(HttpSession session) {
     session.invalidate(); // clears login session
-    return "redirect:/login";
+    return "redirect:/";
 }
 
 @PostMapping("/login")
@@ -24,11 +24,10 @@ public String login(
         @RequestParam String password,
         Model model) {
 
-    // USER 1
-    if (username.equals("24rp01507") && password.equals("24rp01217")) {
-        return "redirect:/assets";
-    }
 
+    if (username.equals("24rp01507") && password.equals("24rp01217")) {
+        return "redirect:/dashboard";
+    }
     model.addAttribute("error", "Invalid username or password");
     return "login";
 }
