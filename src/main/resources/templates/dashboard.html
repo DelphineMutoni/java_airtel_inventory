@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/dashboard">Inventory System</a>
+
+        <div>
+            <a class="btn btn-primary btn-sm" href="/assets">Assets</a>
+            <a class="btn btn-success btn-sm" href="/assignments">Assignments</a>
+            <a class="btn btn-danger btn-sm" href="/logout">Logout</a>
+        </div>
+    </div>
+        
+
+</nav>
+
+<!-- DASHBOARD CONTENT -->
+<div class="container mt-5">
+
+    <h2 class="mb-4">Dashboard Overview</h2>
+
+    <div class="row">
+
+        <!-- TOTAL ASSETS -->
+        <div class="col-md-4">
+            <div class="card text-white bg-primary mb-3">
+                <div class="card-body text-center">
+                    <h4>Total Assets</h4>
+                    <h1 th:text="${total}">0</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- ASSIGNED -->
+        <div class="col-md-4">
+            <div class="card text-white bg-warning mb-3">
+                <div class="card-body text-center">
+                    <h4>Assigned Assets</h4>
+                    <h1 th:text="${assigned}">0</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- AVAILABLE -->
+        <div class="col-md-4">
+            <div class="card text-white bg-success mb-3">
+                <div class="card-body text-center">
+                    <h4>Available Assets</h4>
+                    <h1 th:text="${available}">0</h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

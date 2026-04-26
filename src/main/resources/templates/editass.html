@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Asset</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container mt-4">
+
+    <h2>Edit Asset</h2>
+
+    <form th:action="@{/saveAsset}" th:object="${asset}" method="post">
+
+        <input type="hidden" th:field="*{id}" />
+
+        <input type="text" th:field="*{assetCode}" class="form-control mb-2" placeholder="Asset Code">
+        <input type="text" th:field="*{deviceType}" class="form-control mb-2" placeholder="Device Type">
+        <input type="text" th:field="*{brand}" class="form-control mb-2" placeholder="Brand">
+        <input type="text" th:field="*{model}" class="form-control mb-2" placeholder="Model">
+        <input type="text" th:field="*{serialNumber}" class="form-control mb-2" placeholder="Serial Number">
+        <input type="text" th:field="*{department}" class="form-control mb-2" placeholder="Department">
+        <input type="text" th:field="*{assignedTo}" class="form-control mb-2" placeholder="Assigned To">
+
+        <select th:field="*{status}" class="form-control mb-2">
+            <option value="Available">Available</option>
+            <option value="Assigned">Assigned</option>
+            <option value="Maintenance">Maintenance</option>
+        </select>
+
+        <select th:field="*{conditionStatus}" class="form-control mb-2">
+            <option value="New">New</option>
+            <option value="Good">Good</option>
+            <option value="Damaged">Damaged</option>
+        </select>
+
+        <button class="btn btn-success">Update</button>
+
+    </form>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Assignments</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR START -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+
+    <a class="navbar-brand" href="/">Inventory System</a>
+
+    <div class="collapse navbar-collapse">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="/assets">Assets</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/assignments">Assignments</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/assign">Assign Asset</a>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+</nav>
+<!-- NAVBAR END -->
+
+<div class="container mt-4">
+
+<h2>Asset Assignments</h2>
+
+<table class="table table-bordered">
+
+<tr>
+<th>Asset ID</th>
+<th>Employee</th>
+<th>Department</th>
+<th>Status</th>
+</tr>
+
+<tr th:each="a : ${list}">
+<td th:text="${a.assetId}"></td>
+<td th:text="${a.employeeName}"></td>
+<td th:text="${a.department}"></td>
+<td th:text="${a.status}"></td>
+</tr>
+
+</table>
+
+</div>
+
+</body>
+</html>
