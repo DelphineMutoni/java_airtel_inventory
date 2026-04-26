@@ -68,7 +68,7 @@ public class AssetController {
     // =========================
     // DASHBOARD
     // =========================
-    @GetMapping("/")
+    @GetMapping("/dashboard")
     public String dashboard(Model model) {
 
         long total = service.getAllAssets().size();
